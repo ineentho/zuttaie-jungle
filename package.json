@@ -1,0 +1,28 @@
+{
+  "name": "zuttaie-jungle",
+  "version": "1.0.0",
+  "description": "> Jag kan ocks�!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ineentho/zuttaie-jungle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ineentho/zuttaie-jungle/issues"
+  },
+  "homepage": "https://github.com/ineentho/zuttaie-jungle#readme",
+  "dependencies": {
+    "broccoli": "^0.16.3",
+    "broccoli-es6modules": "^1.0.0",
+    "broccoli-funnel": "^0.2.3"
+  },
+  "devDependencies": {
+    "broccoli-jade": "^1.0.1",
+    "broccoli-merge-trees": "^0.2.1"
+  }
+}
