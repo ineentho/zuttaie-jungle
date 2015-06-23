@@ -23,6 +23,9 @@
   },
   "devDependencies": {
     "broccoli-jade": "^1.0.1",
-    "broccoli-merge-trees": "^0.2.1"
+    "broccoli-merge-trees": "^0.2.1",
+    "broccoli-stylus": "^2.1.0",
+    "broccoli-stylus-single": "^0.4.1",
+    "stylus": "^0.51.1"
   }
 }

@@ -1,7 +1,8 @@
 var funnel      = require('broccoli-funnel'),
-    compileJade = require('broccoli-jade'),
     mergeTrees  = require('broccoli-merge-trees'),
-    es6Modules  = require('broccoli-es6modules');
+    es6Modules  = require('broccoli-es6modules'),
+    compileJade = require('broccoli-jade'),
+    compileStylus = require('broccoli-stylus-single');
 
 
 var es6Files = new es6Modules('./app/js/', {
@@ -12,11 +13,13 @@ var es6Files = new es6Modules('./app/js/', {
     }
 });
 
-jade = compileJade('./app/jade');
+var stylus = compileStylus('./app/styl/', 'main.styl', './main.css');
+
+var jade = compileJade('./app/jade');
 
 var screenshots = funnel('screenshots', {
     destDir: 'screenshots'
 });
 
 
-module.exports = mergeTrees([jade, screenshots, es6Files]);
+module.exports = mergeTrees([jade, screenshots, es6Files, stylus]);
