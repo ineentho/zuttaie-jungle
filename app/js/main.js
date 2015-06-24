@@ -1,3 +1,5 @@
-import { test } from 'module'
+import test from './module'
+
+console.log('asd');
 
 test();

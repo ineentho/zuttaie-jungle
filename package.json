@@ -18,7 +18,9 @@
   "homepage": "https://github.com/ineentho/zuttaie-jungle#readme",
   "dependencies": {
     "broccoli": "^0.16.3",
-    "broccoli-es6modules": "^1.0.0",
+    "broccoli-babel-transpiler": "^5.2.3",
+    "broccoli-browserify": "^0.1.0",
+    "broccoli-concat": "0.0.13",
     "broccoli-funnel": "^0.2.3"
   },
   "devDependencies": {
