@@ -28,9 +28,12 @@ document.body.addEventListener("keydown", function (e) {
     }
 });
 function images() {
-    previous.src = slides[currentimg - 1];
-    current.src = slides[currentimg];
-    next.src = slides[currentimg + 1];
+    previous.src = slides[mod(currentimg - 1, slides.length)];
+    current.src = slides[mod(currentimg, slides.length)];
+    next.src = slides[mod(currentimg + 1, slides.length)];
 }
 images();
+function mod(n, m) {
+    return (n % m + m) % m;
+}
 },{}]},{},[1])
