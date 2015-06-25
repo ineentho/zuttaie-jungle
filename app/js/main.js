@@ -1,3 +1,5 @@
-let module = require('./module.js');
+import test from './module'
 
-module.test();
+console.log('asd');
+
+test();

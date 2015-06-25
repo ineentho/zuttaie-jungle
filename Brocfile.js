@@ -1,22 +1,25 @@
-var funnel      = require('broccoli-funnel'),
-    compileJade = require('broccoli-jade'),
-    mergeTrees  = require('broccoli-merge-trees'),
-    es6Modules  = require('broccoli-es6modules');
+var funnel        = require('broccoli-funnel'),
+    mergeTrees    = require('broccoli-merge-trees'),
+    babel         = require('broccoli-babel-transpiler'),
+    compileJade   = require('broccoli-jade'),
+    compileStylus = require('broccoli-stylus-single'),
+    browserify    = require('broccoli-browserify');
 
 
-var es6Files = new es6Modules('./app/js/', {
-    format: 'amd',
-    bundleOptions: {
-        entry: 'main.js',
-        name: 'scripts'
-    }
+var js = babel('./app/js', {});
+
+js = browserify(js, {
+    entries: ['./main.js'],
+    outputFile: 'main.js'
 });
 
-jade = compileJade('./app/jade');
+var stylus = compileStylus('./app/styl/', 'main.styl', './main.css');
+
+var jade = compileJade('./app/jade');
 
 var screenshots = funnel('screenshots', {
     destDir: 'screenshots'
 });
 
 
-module.exports = mergeTrees([jade, screenshots, es6Files]);
+module.exports = mergeTrees([jade, screenshots, js, stylus]);
